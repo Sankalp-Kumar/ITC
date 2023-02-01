@@ -14,6 +14,7 @@ import streamlit as st
 
 st.title('DEMAND FORECASTING ON ITC DATA')
 
-uploaded_file_name=st.text_input('enter Excel file here')
-if uploaded_file_name:
-    st.write("Filename: ", uploaded_file_name)
+uploaded_file = st.file_uploader("Upload The Excel file here")
+
+if uploaded_file:
+    st.write("Filename: ", uploaded_file.name)
