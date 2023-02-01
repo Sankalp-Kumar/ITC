@@ -34,6 +34,7 @@ if uploaded_file:
             dataY.append(dataset.iloc[i+n_future-1:i+n_future,-1])
         return np.array(dataX),np.array(dataY)
     xtrain,y=createXY(train,1,0)
-    st.write(xtrain.shape,y.shape)
+    model1=tf.keras.models.load_model('LSTM_MAPE(11).h5')
+    st.write(model1.summary())
     
     
