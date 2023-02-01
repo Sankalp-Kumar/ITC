@@ -18,3 +18,6 @@ uploaded_file = st.file_uploader("Upload The Excel file here")
 
 if uploaded_file:
     st.write("Filename: ", uploaded_file.name)
+    df = pd.read_excel(uploaded_file.name,index_col='Yr-Wk')
+    df.head()
+    st.write(df)
