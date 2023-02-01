@@ -63,7 +63,7 @@ if uploaded_file:
     pred1=pd.DataFrame(pred1).set_index(df.index[:-69])
     my_table = st.table(pred1)
     pred2=pd.DataFrame(pred2).set_index(df.index[-69:])
-    my_table.add_rows(df2)
+    my_table.add_rows(pred2)
     my_chart = st.line_chart(pred1)
     my_chart.add_rows(pred2)
 #     plt.plot(pred1, color='r', label='train')
