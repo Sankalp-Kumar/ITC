@@ -13,3 +13,7 @@ import streamlit as st
 
 
 st.title('DEMAND FORECASTING ON ITC DATA')
+
+uploaded_file_name=st.text_input('enter Excel file here')
+if uploaded_file_name:
+    st.write("Filename: ", uploaded_file_name)
