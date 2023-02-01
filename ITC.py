@@ -20,4 +20,20 @@ if uploaded_file:
     st.write("Filename: ", uploaded_file.name)
     df = pd.read_excel(uploaded_file.name,index_col='Yr-Wk')
     df.head()
+    st.subheader('Raw Data')
     st.write(df)
+    train=df[['Seasonality Index','Discount Avg','Quantity']]
+    print(train.shape)
+    
+    def createXY(dataset,n_past,n_future):
+        dataX = []
+        dataY = []
+        for i in range(n_past, len(dataset)-n_future+1):
+            #print(dataset.iloc[i - n_past:i, 0:dataset.shape[1]])
+            dataX.append(dataset.iloc[i - n_past:i, 0:dataset.shape[1]])
+            dataY.append(dataset.iloc[i+n_future-1:i+n_future,-1])
+        return np.array(dataX),np.array(dataY)
+    xtrain,y=createXY(train,1,0)
+    st.write(xtrain.shape,y.shape)
+    
+    
