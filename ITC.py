@@ -53,5 +53,29 @@ if uploaded_file:
     plot2 = x2.plot(plot2)
     st.subheader('Showing the graph for Actual and Predicted values')
     st.pyplot(figure2)
+    from sklearn.model_selection import train_test_split
+    X=xtrain
+    y=train['Quantity']
+    x_train,x_test,y_train,y_test=train_test_split(X,y,test_size=0.3,shuffle=False)
+    plt.figure(figsize=(15, 7.5))
+    pred1=model1.predict(x_train)
+    pred2=model1.predict(x_test)
+    pred1=pd.DataFrame(pred1).set_index(df.index[:-69])
+    my_table = st.table(pred1)
+    pred2=pd.DataFrame(pred2).set_index(df.index[-69:])
+    my_table.add_rows(df2)
+    my_chart = st.line_chart(df1)
+    my_chart.add_rows(df2)
+#     plt.plot(pred1, color='r', label='train')
+#     plt.plot(pred2, color='g', label='test')
+#     plt.plot(train['Quantity'], label='actual')
+#     plt.title('Forecasting using LSTM Model')
+#     plt.xlabel('Fiscal Yr-WK')
+#     plt.ylabel('Quantity')
+#     plt.legend()
+#     plt.show()
+
+# Now the table shown in the Streamlit app contains the data for
+# df1 followed by the data for df2.
 else : 
     st.write('Please upload a file')
