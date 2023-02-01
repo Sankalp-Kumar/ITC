@@ -12,7 +12,7 @@ import tensorflow as tf
 import streamlit as st
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-st.title('DEMAND FORECASTING ON ITC DATA')
+st.title('DEMAND FORECASTING')
 
 uploaded_file = st.file_uploader("Upload The Excel file here")
 
