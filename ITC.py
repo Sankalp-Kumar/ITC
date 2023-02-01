@@ -66,15 +66,7 @@ if uploaded_file:
     my_table.add_rows(pred2)
     my_chart = st.line_chart(pred1)
     my_chart.add_rows(pred2)
-#     my_chart = st.vega_lite_chart({
-#     'mark': 'line',
-#     'encoding': {'x': 'a', 'y': 'b'},
-#     'datasets': {
-#       'some_fancy_name': pred1,  # <-- named dataset
-#      },
-#     'data': {'name': 'some_fancy_name'},
-#     }),
-#     my_chart.add_rows(some_fancy_name=pred2)
+
 #     plt.plot(pred1, color='r', label='train')
 #     plt.plot(pred2, color='g', label='test')
 #     plt.plot(train['Quantity'], label='actual')
