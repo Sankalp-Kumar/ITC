@@ -36,5 +36,8 @@ if uploaded_file:
     xtrain,y=createXY(train,1,0)
     model1=tf.keras.models.load_model('LSTM_MAPE(11).h5')
     st.write(model1.summary())
-    
-    
+    mape=model1.evaluate(xtrain,train['Quantity'])
+    st.write('MAPE:',mape)
+   
+else : 
+    st.write('Please upload a file')
