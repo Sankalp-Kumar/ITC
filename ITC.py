@@ -66,7 +66,7 @@ if uploaded_file:
 #     my_table.add_rows(pred2)
 #     my_chart = st.line_chart(pred1)
 #     my_chart.add_rows(pred2)
-    my_chart.add_rows(train['Quantity'])
+    #my_chart.add_rows(train['Quantity'])
 
     plt.plot(pred1, color='r', label='train')
     plt.plot(pred2, color='g', label='test')
