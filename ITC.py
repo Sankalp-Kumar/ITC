@@ -35,9 +35,20 @@ if uploaded_file:
         return np.array(dataX),np.array(dataY)
     xtrain,y=createXY(train,1,0)
     model1=tf.keras.models.load_model('LSTM_MAPE(11).h5')
-    st.write(model1.summary())
+    #st.write(model1.summary())
     mape=model1.evaluate(xtrain,train['Quantity'])
-    st.write('MAPE:',mape)
-   
+    st.write('MAPE Score :',mape)
+    pred=model1.predict(xtrain)
+#     plt.figure(figsize=(15, 7.5))
+#     plt.plot(pred, color='r', label='model')
+
+#     #plt.axvspan(train.index[-1], forecast.index[-1], alpha=0.5, color='lightgrey')
+#     plt.plot(train['Quantity'], label='actual')
+#     plt.legend()
+#     plt.show()
+    
+    fig = pd.concat([pred,train['Quantity']],axis=1)
+    st.subheader('Graph for Actual and Predicted Test values')
+    st.line_chart(fig)
 else : 
     st.write('Please upload a file')
