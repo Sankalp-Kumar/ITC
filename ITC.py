@@ -46,9 +46,12 @@ if uploaded_file:
 #     plt.plot(train['Quantity'], label='actual')
 #     plt.legend()
 #     plt.show()
-    
-    fig = pd.concat([pred,train['Quantity']],axis=1)
-    st.subheader('Graph for Actual and Predicted Test values')
-    st.line_chart(fig)
+    train['pred'] = pred
+    figure2,x2 = plt.subplots()
+    plot2 = train[['Quantity', 'pred']]
+        #st.write(plot2)
+    plot2 = x2.plot(plot2)
+    st.subheader('Showing the graph for Actual and Predicted values')
+    st.pyplot(figure2)
 else : 
     st.write('Please upload a file')
