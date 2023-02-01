@@ -1,7 +1,7 @@
-tensorflow
-numpy 
-pandas
-matplotlib
+#tensorflow
+#numpy 
+#pandas
+#matplotlib
 sklearn
 seaborn
 streamlit
