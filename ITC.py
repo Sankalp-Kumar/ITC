@@ -78,7 +78,7 @@ if uploaded_file:
 #     my_chart.add_rows(pred2)
     #my_chart.add_rows(train['Quantity'])
 
-    st.subheader('Forecasting using LSTM Model')
+    st.subheader('Forecasting Results')
     plt.plot(pred1, color='r', label='train')
     plt.plot(pred2, color='g', label='test')
     plt.plot(train['Quantity'], label='actual')
