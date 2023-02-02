@@ -67,12 +67,12 @@ if uploaded_file:
     y=train['Quantity']
     x_train,x_test,y_train,y_test=train_test_split(X,y,test_size=0.3,shuffle=False)
     
-     plt.figure(figsize=(15, 7.5))
-     pred1=model1.predict(x_train)
-     pred2=model1.predict(x_test)
-     pred1=pd.DataFrame(pred1).set_index(df.index[:-69])
+    plt.figure(figsize=(15, 7.5))
+    pred1=model1.predict(x_train)
+    pred2=model1.predict(x_test)
+    pred1=pd.DataFrame(pred1).set_index(df.index[:-69])
 # #     my_table = st.table(pred1)
-     pred2=pd.DataFrame(pred2).set_index(df.index[-69:])
+    pred2=pd.DataFrame(pred2).set_index(df.index[-69:])
 #     my_table.add_rows(pred2)
 #     my_chart = st.line_chart(pred1)
 #     my_chart.add_rows(pred2)
